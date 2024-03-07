@@ -41,7 +41,7 @@ public class ClassExam8 {
 		System.out.println(q.a + " " + q.b);
 		System.out.println(w.a + " " + w.b);
 		System.out.println(e.a + " " + e.b);
-
+		System.out.println(e.a + " " + e.b);
 	}
 
 }
