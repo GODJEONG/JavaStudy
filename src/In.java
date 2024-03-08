@@ -4,15 +4,15 @@ public class In {
 	private CC cc ;
 	
 	public In() { //생성자
-		aa = new AA(); 
-		bb = new BB();
-		cc = new CC();
+		this.aa = new AA(); 
+		this.bb = new BB();
+		this.cc = new CC();
 	}
 	
 	public void setAa(String a,int b,int c) {
-		this.aa.setAa(a);
-		this.bb.setAa(b);
-		this.cc.setAa(c);
+		aa.setAa(a);
+		bb.setAa(b);
+		cc.setAa(c);
 	}
 	
 	public String getA() {
@@ -24,12 +24,12 @@ public class In {
 
 	public static void main(String[] args) {
 		 In In = new In();
-		AA aa = new AA(); //
-		BB bb = new BB(); //
-		CC cc = new CC(); //
+//		AA aa = new AA(); //
+//		BB bb = new BB(); //
+//		CC cc = new CC(); //
 
 		In.setAa("ff",4,5);
-		aa.setAa("tt"); //
+		// setAa("tt"); //
 		
 		System.out.println(aa.getAa());
 		System.out.println(bb.getAa());

@@ -1,4 +1,4 @@
-public class Out { //외부에서 만든 객체를 넣는 것_객체di
+public class Out { 
 	private AA aa;
 	private BB bb;
 	private CC cc;
@@ -10,9 +10,9 @@ public class Out { //외부에서 만든 객체를 넣는 것_객체di
 	}
 	
 	public void setAa(String a,int b,int c) {
-		this.aa.setAa(a);
-		this.bb.setAa(b);
-		 this.cc.setAa(c);
+		aa.setAa(a);
+		bb.setAa(b);
+		 cc.setAa(c);
 	}
 	
 	public String getA() {
