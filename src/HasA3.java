@@ -8,15 +8,16 @@ public class HasA3 {
 
 	// constructor ====================================================================
 
-	public HasA3() {
+	public HasA3() { //내부 
+
 		name = new Name();
 		kor = new Subject();
 		eng = new Subject();
 		mat = new Subject();
 	};
 	
-	public HasA3(Name name, Subject kor, Subject eng, Subject mat) {
-	
+	public HasA3(Name name, Subject kor, Subject eng, Subject mat) {  //외부 
+
 		this.name=name;
 		this.kor=kor;
 		this.mat=mat;
@@ -64,7 +65,20 @@ public class HasA3 {
 	// main method ====================================================================
 	public static void main(String[] args) {
 
-		HasA3 stu = new HasA3();
+		// 내부 -------------------------------------------
+//		 HasA3 stu = new HasA3();
+		
+		// 외부 -------------------------------------------
+		// 객체선언
+		Name name = new Name();
+		Subject kor = new Subject();
+		Subject eng = new Subject();
+		Subject mat = new Subject();
+
+		HasA3 stu = new HasA3( name,  kor,  eng,  mat);
+		
+		// 외부 -------------------------------------------
+		
 		stu.setName("홍길동");
 		stu.setKor(10);
 		stu.setMat(0);
