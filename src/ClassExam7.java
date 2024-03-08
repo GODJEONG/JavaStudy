@@ -1,24 +1,7 @@
-
 public class ClassExam7 {
 
 	int a;
 	int b;
-
-	public void setA(int a) {
-		this.a = a;
-	}
-
-	public void setB(int b) {
-		this.b = b;
-	}
-
-	public int getA() {
-		return a;
-	}
-
-	public int getB() {
-		return b;
-	}
 
 	public ClassExam7(int a, int b) {
 		this.a = a;
@@ -47,4 +30,22 @@ public class ClassExam7 {
 		System.out.println(th3.getA() + "+" + th3.getB());
 		System.out.println(th3.getA() + "+" + th3.getB());
 	}
+
+
+
+public void setA(int a) {
+	this.a = a;
+}
+
+public void setB(int b) {
+	this.b = b;
+}
+
+public int getA() {
+	return a;
+}
+
+public int getB() {
+	return b;
+}
 }
