@@ -1,11 +1,11 @@
 class AA {
-	int aa;
+	String aa;
 
-	public void setAa(int aa) {
+	public void setAa(String aa) {
 		this.aa = aa;
 	}
 
-	public int getAa() {
+	public String getAa() {
 		return aa;
 	}
 
