@@ -3,7 +3,6 @@ public class Out { //외부에서 만든 객체를 넣는 것_객체di
 	private BB bb;
 	private CC cc;
 
-	
 	public Out(AA aa, BB bb, CC cc) {
 		this.aa=aa;
 		this.bb=bb;
@@ -17,30 +16,21 @@ public class Out { //외부에서 만든 객체를 넣는 것_객체di
 	}
 	
 	public String getA() {
-		return aa.getAa();
-	}
-	
+		return aa.getAa();	}
 	public int getB() {
-		return bb.getAa();
-	}
-	
+		return bb.getAa();	}
 	public int getC() {
-		return cc.getAa();
-	}
+		return cc.getAa();	}
 
 	public static void main(String[] args) {
-//		 Out hasa2 = new Out();
+
 		AA a = new AA();
 		BB b = new BB();
 		CC c = new CC();
-		 Out hasa2 = new Out(a,b,c);
+		Out hasa2 = new Out(a,b,c);
 		
-//		 a.setAa("5");
-//		 b.setAa(1);
-//		 c.setAa(2);
 		hasa2.setAa("5",1,2);
-		
-//		
+
 		System.out.println(a.getAa());
 		System.out.println(b.getAa());
 		System.out.println(c.getAa());
@@ -48,8 +38,6 @@ public class Out { //외부에서 만든 객체를 넣는 것_객체di
 		System.out.println(hasa2.getA());
 		System.out.println(hasa2.getB());
 		System.out.println(hasa2.getC());
-		
-	//	System.out.println(hasa2.getAA());
-}
 
+}
 }
