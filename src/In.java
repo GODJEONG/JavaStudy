@@ -24,9 +24,6 @@ public class In {
 
 	public static void main(String[] args) {
 		 In In = new In();
-//		AA aa = new AA(); //
-//		BB bb = new BB(); //
-//		CC cc = new CC(); //
 
 		In.setAa("ff",4,5);
 		// setAa("tt"); //

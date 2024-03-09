@@ -1,5 +1,5 @@
-//성적처리클래스
-public class HasA3 {
+//이름 및 성적 관련 getter setter
+public class Gradeinput {
     // field ====================================================================
 	Name name;
 	Subject kor;
@@ -8,7 +8,7 @@ public class HasA3 {
 
 	// constructor ====================================================================
 
-	public HasA3() { //내부 
+	public Gradeinput() { //내부 
 
 		name = new Name();
 		kor = new Subject();
@@ -16,7 +16,7 @@ public class HasA3 {
 		mat = new Subject();
 	};
 	
-	public HasA3(Name name, Subject kor, Subject eng, Subject mat) {  //외부 
+	public Gradeinput(Name name, Subject kor, Subject eng, Subject mat) {  //외부 
 
 		this.name=name;
 		this.kor=kor;
@@ -57,8 +57,8 @@ public class HasA3 {
 		return this.kor.getSubject()+this.eng.getSubject()+this.mat.getSubject();
 	}
 	
-	public double getAvg() {
-		return (this.kor.getSubject() + this.eng.getSubject() + this.mat.getSubject()) /(double)3 ;
+	public String getAvg() {
+		return String.format("%.2f",((this.kor.getSubject() + this.eng.getSubject() + this.mat.getSubject()) / (float)3) );
 	}
 	
 	
@@ -75,7 +75,7 @@ public class HasA3 {
 		Subject eng = new Subject();
 		Subject mat = new Subject();
 
-		HasA3 stu = new HasA3( name,  kor,  eng,  mat);
+		Gradeinput stu = new Gradeinput( name,  kor,  eng,  mat);
 		
 		// 외부 -------------------------------------------
 		

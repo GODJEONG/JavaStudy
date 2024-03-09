@@ -24,6 +24,7 @@ public class Out {
 	public int getC() {
 		return cc.getAa();	}
 
+
 	public static void main(String[] args) {
 
 		AA a = new AA();
