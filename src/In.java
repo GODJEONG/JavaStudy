@@ -31,9 +31,9 @@ public class In {
 		In.setAa("ff",4,5);
 		// setAa("tt"); //
 		
-		System.out.println(aa.getAa());
-		System.out.println(bb.getAa());
-		System.out.println(cc.getAa());
+//		System.out.println(aa.getAa());
+//		System.out.println(bb.getAa());
+//		System.out.println(cc.getAa());
 		
 		System.out.println(In.getA());
 		System.out.println(In.getB());
