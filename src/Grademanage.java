@@ -1,12 +1,10 @@
-package grademanage;
-
 import java.util.Scanner;
 
 public class Grademanage {
 
 	public static void main(String[] args) {
-		
-	
+		// TODO Auto-generated method stub
+
 		Scanner sc = new Scanner(System.in);
 		int func = 1;
 		int num = 0;
@@ -59,7 +57,7 @@ public class Grademanage {
 						System.out.println("평균: " + list[i].getAvg() + "점 ");
 					} else
 						System.out.println(student + " 라는 학생은 관리명단에 없습니다. ");
-					}
+				}
 				break;
 			case 4:
 				System.out.print("수정할 학생 이름을 입력하세요: ");
@@ -103,4 +101,5 @@ public class Grademanage {
 		} while (func != 5);
 
 	}
+
 }
