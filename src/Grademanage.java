@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Grademanage {
 
-	public static void main(Str[] args) {
+	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 		Scanner sc = new Scanner(System.in);
@@ -21,8 +21,12 @@ public class Grademanage {
 			switch (func) {
 			case 1:
 				list[num] = new Inout();
+
+				list[num].Inout(sc.next(),sc.nextInt(),sc.nextInt(),sc.nextInt()); 
+				
+				/*
 				System.out.print("이름 입력: ");
-				list[num].setName(sc.next()); // 왜 java.lang.String로 선언해야 되죠!?
+				list[num].setName(sc.next()); 
 				System.out.print("국어 성적 입력: ");
 				list[num].setKor(sc.nextInt());
 				System.out.print("수학 성적 입력: ");
@@ -30,10 +34,11 @@ public class Grademanage {
 				System.out.print("영어 성적 입력: ");
 				list[num].setEng(sc.nextInt());
 				num++;
+				*/
 				break;
 
 			case 2:
-				for (int i = 0; i <= num; i++) {
+				for (int i = 0; i < num; i++) {
 					System.out.println(" -------" + (i + 1) + " 번째 학생 성적 ------- ");
 					System.out.println("이름: " + list[i].getName());
 					System.out.print("국어: " + list[i].getKor() + "점 ");
@@ -46,8 +51,8 @@ public class Grademanage {
 
 			case 3:
 				System.out.print("조회할 학생 이름을 입력하세요: ");
-				java.lang.String student = sc.next(); // 타입 왜??
-				for (int i = 0; i <= num; i++) {
+				String student = sc.next();
+				for (int i = 0; i < num; i++) {
 					if (student.equals(list[i].getName())) {
 						System.out.println("이름: " + list[i].getName());
 						System.out.print("국어: " + list[i].getKor() + "점 ");
@@ -61,10 +66,10 @@ public class Grademanage {
 				break;
 			case 4:
 				System.out.print("수정할 학생 이름을 입력하세요: ");
-				java.lang.String student2 = sc.next(); // 타입 왜??
-				for (int i = 0; i <= num; i++) {
+				String student2 = sc.next(); 
+				for (int i = 0; i < num; i++) {
 					if (student2.equals(list[i].getName())) {
-						System.out.println(student2 + "학생 정보를 수정하겠습니다. ");
+						System.out.println(student2 + " 학생 정보를 수정하겠습니다. ");
 						System.out.print("변경할 이름: ");
 						list[i].setName(sc.next());
 						System.out.println("");

@@ -20,10 +20,10 @@ class A {
 public class HasA {
 	
 	// field
-	private Str name;
+	private String name;
 	private A aged;
 	
-	// constructor
+	// conStringinguctor
 	
 	public HasA() {
 		System.out.println("HasA");
@@ -32,7 +32,7 @@ public class HasA {
 	}
 // setter getter method --------------------------------------------
 	
-	public static void main(Str[] args) {
+	public static void main(String[] args) {
 		
 		HasA has = new HasA(); 
 
@@ -45,7 +45,7 @@ public class HasA {
 	}
 	  // -----------------------------------------
 	
-	public void setName(Str name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
@@ -53,7 +53,7 @@ public class HasA {
 		this.aged.setA(a);
 	}
 
-	public Str getName() {
+	public String getName() {
 		return name;
 	}
 

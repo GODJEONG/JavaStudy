@@ -14,6 +14,14 @@ public class Inout {
 		this.mat = 0;
 	}
 
+	public Inout(String name, int kor, int eng, int mat) {
+		this.name =name;
+		this.kor =kor;
+		this.eng =eng;
+		this.mat = mat;
+	}
+	
+
 	public String getName() {
 		return name;
 	}

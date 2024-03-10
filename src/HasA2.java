@@ -1,11 +1,11 @@
 class AA {
-	Str aa;
+	String aa;
 
-	public void setAa(Str aa) {
+	public void setAa(String aa) {
 		this.aa = aa;
 	}
 
-	public Str getAa() {
+	public String getAa() {
 		return aa;
 	}
 
@@ -42,7 +42,7 @@ public class HasA2 {
 	private BB bb;
 	private CC cc;
 	
-	public static void main(Str[] args) {
+	public static void main(String[] args) {
 
 		HasA2 hasa2 = new HasA2();
 		AA a = new AA();
