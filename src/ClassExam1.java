@@ -5,7 +5,7 @@ public class ClassExam1 {
 	private char s;
 	private float c;
 	
-	public static void main(Str[] args) {
+	public static void main(String[] args) {
 //
 		ClassExam1 ce = new ClassExam1();  // 생성자함수 호출
 		ce.output(1, 2);

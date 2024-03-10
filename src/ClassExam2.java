@@ -21,7 +21,7 @@ public class ClassExam2 {
 		return a;	}
 	
 	// method
-	public static void main(Str[] args) {
+	public static void main(String[] args) {
 
 		ClassExam2 ce2 = new ClassExam2(); // 생성자 호출
 		ClassExam2 ce3 = new ClassExam2(10); // 생성자 호출

@@ -20,7 +20,7 @@ public class ClassExam7 {
 		this(a, 0);
 	};
 
-	public static void main(Str[] args) {
+	public static void main(String[] args) {
 		ClassExam7 th = new ClassExam7(20,30); // 0, 0
 		ClassExam7 th2 = new ClassExam7(20,30); // 10 ,0
 		ClassExam7 th3 = new ClassExam7(20, 30); // 20 , 30

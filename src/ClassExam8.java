@@ -32,7 +32,7 @@ public class ClassExam8 {
 		this(a, 0);
 	};
 
-	public static void main(Str[] args) {
+	public static void main(String[] args) {
 
 		ClassExam8 q = new ClassExam8();
 		ClassExam8 w = new ClassExam8(1);
