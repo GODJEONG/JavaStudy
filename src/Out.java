@@ -27,9 +27,9 @@ public class Out {
 
 	public static void main(String[] args) {
 
-//		AA a = new AA();
-//		BB b = new BB();
-//		CC c = new CC();
+		AA a = new AA();
+		BB b = new BB();
+		CC c = new CC();
 		Out hasa2 = new Out(a,b,c);
 		
 		hasa2.setAa("5",1,2);
