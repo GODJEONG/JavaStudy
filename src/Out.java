@@ -27,16 +27,16 @@ public class Out {
 
 	public static void main(String[] args) {
 
-		AA a = new AA();
-		BB b = new BB();
-		CC c = new CC();
+//		AA a = new AA();
+//		BB b = new BB();
+//		CC c = new CC();
 		Out hasa2 = new Out(a,b,c);
 		
 		hasa2.setAa("5",1,2);
 
-		System.out.println(a.getAa());
-		System.out.println(b.getAa());
-		System.out.println(c.getAa());
+//		System.out.println(a.getAa());
+//		System.out.println(b.getAa());
+//		System.out.println(c.getAa());
 		
 		System.out.println(hasa2.getA());
 		System.out.println(hasa2.getB());

@@ -20,10 +20,8 @@ public class Grademanage {
 
 			switch (func) {
 			case 1:
-				list[num] = new Inout();
-
-				list[num].Inout(sc.next(),sc.nextInt(),sc.nextInt(),sc.nextInt()); 
-				
+				System.out.print("이름/국/영/수 입력: ");
+				list[num] = new Inout(sc.next(),sc.nextInt(),sc.nextInt(),sc.nextInt());	
 				/*
 				System.out.print("이름 입력: ");
 				list[num].setName(sc.next()); 
@@ -33,8 +31,8 @@ public class Grademanage {
 				list[num].setMat(sc.nextInt());
 				System.out.print("영어 성적 입력: ");
 				list[num].setEng(sc.nextInt());
-				num++;
 				*/
+				num++;
 				break;
 
 			case 2:

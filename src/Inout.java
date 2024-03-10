@@ -55,10 +55,10 @@ public class Inout {
 	}
 
 	public int getTotal() {
-		return this.getMat() + this.getEng() + this.getEng();
+		return this.getMat() + this.getEng() + this.getKor();
 	}
 
 	public float getAvg() {
-		return (this.getMat() + this.getEng() + this.getEng()) / (float) 3;
+		return (this.getMat() + this.getEng() + this.getKor()) / (float) 3;
 	}
 }
