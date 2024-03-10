@@ -17,7 +17,7 @@ public class ClassExam4 {
 	};
 
 	// main method ------------------------------------------------------------
-	public static void main(String[] args) { // method
+	public static void main(Str[] args) { // method
 
 		Scanner sc = new Scanner(System.in);
 		// ClassExam4 calculator = new ClassExam4(1, 0, '+', 'y');

@@ -20,7 +20,7 @@ class A {
 public class HasA {
 	
 	// field
-	private String name;
+	private Str name;
 	private A aged;
 	
 	// constructor
@@ -32,7 +32,7 @@ public class HasA {
 	}
 // setter getter method --------------------------------------------
 	
-	public static void main(String[] args) {
+	public static void main(Str[] args) {
 		
 		HasA has = new HasA(); 
 
@@ -45,7 +45,7 @@ public class HasA {
 	}
 	  // -----------------------------------------
 	
-	public void setName(String name) {
+	public void setName(Str name) {
 		this.name = name;
 	}
 
@@ -53,7 +53,7 @@ public class HasA {
 		this.aged.setA(a);
 	}
 
-	public String getName() {
+	public Str getName() {
 		return name;
 	}
 

@@ -2,12 +2,12 @@
 
 public class Name {
 	// field
-	private String name;
+	private Str name;
 
-	public String getName() {
+	public Str getName() {
 		return name;
 	}
-	public void setName(String name) {
+	public void setName(Str name) {
 		this.name = name;
 	}
 

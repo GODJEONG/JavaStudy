@@ -11,7 +11,7 @@ public class ClassExam3 {
 		oper = operation;
 	};
 	
-	public static void main(String[] args) { 	// method
+	public static void main(Str[] args) { 	// method
 
 		char cn = 'Y';
 		Scanner sc = new Scanner(System.in);

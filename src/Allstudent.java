@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Allstudent {
 
-	public static void main(String[] args) {
+	public static void main(Str[] args) {
 		Scanner sc =new Scanner(System.in);
 		
 		System.out.print("학생 수를 입력하세요: ");

@@ -1,7 +1,7 @@
 public class Inout {
 
 	// field ====================================================================
-	String name;
+	Str name;
 	Number kor;
 	Number eng;
 	Number mat;
@@ -11,21 +11,21 @@ public class Inout {
 
 	public Inout() { // 내부
 
-		name = new String();
+		name = new Str();
 		kor = new Number();
 		eng = new Number();
 		mat = new Number();
 	};
 
 		
-		public Inout(String name, Number kor, Number eng, Number mat) {  //외부 
+		public Inout(Str name, Number kor, Number eng, Number mat) {  //외부 
 			this.name=name;
 			this.kor=kor;
 			this.mat=mat;
 			this.eng=eng;
 		}
 		
-		public void setName(String string) {
+		public void setName(Str string) {
 			this.name.setStringg(string);
 		}
 
@@ -41,7 +41,7 @@ public class Inout {
 			this.mat.setNumber(mat);
 		}
 		
-		public String getName() {
+		public Str getName() {
 			return this.name.getString();
 		}
 		public int getKor() {

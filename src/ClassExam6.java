@@ -14,7 +14,7 @@ public class ClassExam6 {
 		return this;
 	};
 	
-	public static void main(String[] args) {
+	public static void main(Str[] args) {
 		ClassExam6 th = new ClassExam6();
 
 		th.setA(100);

@@ -3,10 +3,10 @@ import java.util.Scanner;
 public class ClassExam5 {
 	// field ---------------------------------------------------------
 	private int stud, score;
-	private String name;
+	private Str name;
 
 	// constructor ---------------------------------------------------
-	public ClassExam5(int a, String b, int c) {
+	public ClassExam5(int a, Str b, int c) {
 		stud = a;
 		name = b;
 		score = c;
@@ -22,11 +22,11 @@ public class ClassExam5 {
 		return stud;
 	};
 
-	public void Setname(String a) {
+	public void Setname(Str a) {
 		name = a;
 	};
 
-	public String Getname() {
+	public Str Getname() {
 		return name;
 	};
 
@@ -40,14 +40,14 @@ public class ClassExam5 {
 	};
 
 	// main ------------------------------------------------------------------------
-	public static void main(String[] args) { // 학생수 입력 받아 성적관리(총합,평균) 결과 노출 프로그램
+	public static void main(Str[] args) { // 학생수 입력 받아 성적관리(총합,평균) 결과 노출 프로그램
 
 		Scanner sc = new Scanner(System.in);
 		ClassExam5 grade = new ClassExam5(1, "홍길동", 100);
 		System.out.print("학생수 입력: ");
 		grade.SetStud(sc.nextInt());
 
-		String[] name1 = new String[grade.GetStud()];
+		Str[] name1 = new Str[grade.GetStud()];
 		int[][] score1 = new int[grade.GetStud()][4];
 		float[] avg1 = new float[grade.GetStud()];
 

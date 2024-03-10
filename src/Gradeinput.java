@@ -24,7 +24,7 @@ public class Gradeinput {
 		this.eng=eng;
 	}
 	
-	public void setName(String name) {
+	public void setName(Str name) {
 		this.name.setName(name);
 	}
 
@@ -40,7 +40,7 @@ public class Gradeinput {
 		this.mat.setSubject(mat);
 	}
 	
-	public String getName() {
+	public Str getName() {
 		return this.name.getName();
 	}
 	public int getKor() {
@@ -57,13 +57,13 @@ public class Gradeinput {
 		return this.kor.getSubject()+this.eng.getSubject()+this.mat.getSubject();
 	}
 	
-	public String getAvg() {
-		return String.format("%.2f",((this.kor.getSubject() + this.eng.getSubject() + this.mat.getSubject()) / (float)3) );
+	public Str getAvg() {
+		return Str.format("%.2f",((this.kor.getSubject() + this.eng.getSubject() + this.mat.getSubject()) / (float)3) );
 	}
 	
 	
 	// main method ====================================================================
-	public static void main(String[] args) {
+	public static void main(Str[] args) {
 
 		// 내부 -------------------------------------------
 //		 HasA3 stu = new HasA3();

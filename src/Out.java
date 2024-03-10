@@ -11,13 +11,13 @@ public class Out {
 		this.cc=cc;
 	}
 	
-	public void setAa(String a,int b,int c) {
+	public void setAa(Str a,int b,int c) {
 		aa.setAa(a);
 		bb.setAa(b);
 		 cc.setAa(c);
 	}
 	
-	public String getA() {
+	public Str getA() {
 		return aa.getAa();	}
 	public int getB() {
 		return bb.getAa();	}
@@ -25,7 +25,7 @@ public class Out {
 		return cc.getAa();	}
 
 
-	public static void main(String[] args) {
+	public static void main(Str[] args) {
 
 		AA a = new AA();
 		BB b = new BB();

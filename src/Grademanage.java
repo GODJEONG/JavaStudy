@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Grademanage {
 
-	public static void main(String[] args) {
+	public static void main(Str[] args) {
 		// TODO Auto-generated method stub
 
 		Scanner sc = new Scanner(System.in);
