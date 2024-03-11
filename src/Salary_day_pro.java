@@ -225,19 +225,22 @@ public class Salary_day_pro {
 		if (check == 0) {
 			System.out.println("입력한 직원 정보와 일치하는 근무 정보가 없어 급여를 조회할 수 없습니다.");
 		}
+		System.out.println("===========근무 외 급여==============");
+		System.out.println("* 근무외급여는 해당 월에 최소 1번은 출근해야 지급됩니다. ");
 
 		for (int i = 0; i < num_emp; i++) {
-			for (int j = 0; j < num_emp; j++) {
+			for (int j = 0; j < num_work; j++) {
 				if (key.equals(info_emp[i].getKbpin()) & key.equals(day_salary[j].getKbpin())
-						& info_emp[i].getAnniversary().equals(now_dt)) {
+						& info_emp[i].getAnniversary().substring(0,2).equals(info_work[j].getWorkdate().substring(4,6))) {
+
 					System.out.println("결혼기념일 축하금: " + day_salary[j].getBirthbonus());
 				}
 				if (key.equals(info_emp[i].getKbpin()) & key.equals(day_salary[j].getKbpin())
-						& info_emp[i].getMatebirth().equals(now_dt)) {
+						& info_emp[i].getMatebirth().substring(0,2).equals(info_work[j].getWorkdate().substring(4,8))) {
 					System.out.println("배우자생일 축하금: " + day_salary[j].getCongratebonus());
 				}
 				if (key.equals(info_emp[i].getKbpin()) & key.equals(day_salary[j].getKbpin())
-						& info_emp[i].getParentbirth().equals(now_dt)) {
+						& info_emp[i].getParentbirth().substring(0,2).equals(info_work[j].getWorkdate().substring(4,8))) {
 					System.out.println("부모님생일 축하금: " + day_salary[j].getAnniversarybonus());
 				}
 			}
