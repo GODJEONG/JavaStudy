@@ -5,9 +5,9 @@ public class Day_salary_pro {
 	private int day_daysalary;
 	private int night_daysalary;
 	private int holiday_daysalary;
-	private int birthbonus;
-	private int congratebonus;
-	private int anniversarybonus;
+	private int birthbonus=0;
+	private int congratebonus =0;
+	private int anniversarybonus=0;
 	private int total_daysalary ;
 
 	public Day_salary_pro() {

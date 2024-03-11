@@ -4,9 +4,9 @@ public class Employee_pro {
 	private String name;
 	private int joindate;
 	private int emptype;
-	private String anniversary;
-	private String matebirth;
-	private String parentbirth;
+	private String anniversary;  // 결혼
+	private String matebirth; // 배우자 생일
+	private String parentbirth; // 부모님 생일
 	private int grade;
 	private int salaryday;
 	private String salarybank;

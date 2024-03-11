@@ -116,7 +116,7 @@ public class Salary_day_pro {
 	}
 
 	public void salarycalcul() { // 급여 계산 함수
-		
+
 		System.out.println("==========================================");
 		System.out.print("[급여 계산] 사번 입력: ");
 		String key = sc.next();
@@ -125,7 +125,7 @@ public class Salary_day_pro {
 		for (int j = 0; j < num_emp; j++) {
 			if (key.equals(info_emp[j].getKbpin())) {
 				for (int i = 0; i < num_work; i++) {
-					System.out.print(day_salary[i]);
+					// System.out.print(day_salary[i]);
 					day_salary[i] = new Day_salary_pro();
 					if (key.equals(info_work[i].getKbpin())) {
 						day_salary[i].setKbpin(info_emp[j].getKbpin());
@@ -157,16 +157,17 @@ public class Salary_day_pro {
 
 		for (int i = 0; i < num_emp; i++) {
 			for (int j = 0; j < num_work; j++) {
-				if (key.equals(info_emp[i].getKbpin()) & key.equals(day_salary[j].getKbpin())
-						& info_emp[i].getAnniversary().equals(now_dt)) {
+				if (key.equals(info_work[j].getKbpin()) & key.equals(day_salary[j].getKbpin())
+						& info_emp[i].getAnniversary().equals(now_dt) & info_work[j].getWorkdate().equals(info_emp[i].getAnniversary())) {
+
 					day_salary[j].setBirthbonus(500000);
 				}
-				if (key.equals(info_emp[i].getKbpin()) & key.equals(day_salary[j].getKbpin())
-						& info_emp[i].getMatebirth().equals(now_dt)) {
+				if (key.equals(info_work[j].getKbpin()) & key.equals(day_salary[j].getKbpin())
+						& info_emp[i].getMatebirth().equals(now_dt) & info_work[j].getWorkdate().equals(info_emp[i].getMatebirth())) {
 					day_salary[j].setCongratebonus(200000);
 				}
-				if (key.equals(info_emp[i].getKbpin()) & key.equals(day_salary[j].getKbpin())
-						& info_emp[i].getParentbirth().equals(now_dt)) {
+				if (key.equals(info_work[j].getKbpin()) & key.equals(day_salary[j].getKbpin())
+						& info_emp[i].getParentbirth().equals(now_dt) & info_work[j].getWorkdate().equals(info_emp[i].getParentbirth())) {
 					day_salary[j].setAnniversarybonus(200000);
 
 				}
@@ -174,7 +175,7 @@ public class Salary_day_pro {
 		}
 		for (int i = 0; i < num_emp; i++) {
 			for (int j = 0; j < num_work; j++) {
-				if (key.equals(info_emp[i].getKbpin()) & key.equals(day_salary[j].getKbpin())) {
+				if (key.equals(info_work[j].getKbpin()) & key.equals(day_salary[j].getKbpin())) {
 					day_salary[j]
 							.setTotal_daysalary(day_salary[j].getDay_daysalary() + day_salary[j].getNight_daysalary()
 									+ day_salary[j].getHoliday_daysalary() + day_salary[j].getBirthbonus()
@@ -195,21 +196,21 @@ public class Salary_day_pro {
 		String key = sc.next();
 		int check = 0; // 입력한 사번과 동일한 사번 있는지 체크 변수
 
-		for (int i = 0; i < num_work && i <= save; i++) {
-			if (key.equals(info_work[i].getKbpin())) {
-				for (int j = 0; j < num_emp; j++) {
-					if (key.equals(info_emp[i].getKbpin())) {
-						System.out.println("=========근무일자: " + info_work[j].getWorkdate() + " 현황==============");
-						System.out.println("사번: " + info_emp[i].getKbpin());
-						System.out.println("이름: " + info_emp[i].getName());
-						System.out.println("근무일자: " + info_work[j].getWorkdate());
-						System.out.println("고용 형태: " + info_emp[i].getEmptype());
-						System.out.println("주간 근무 시간: " + info_work[j].getDayworktime());
-						System.out.println("야간 근무 시간: " + info_work[j].getNightworktime());
-						System.out.println("주말 근무 시간: " + info_work[j].getHoildyworktime());
-						System.out.println("연차: " + (info_emp[i].getJoindate() - 1));
-						System.out.println("고용형태: " + (info_emp[i].getEmptype() - 1));
-						System.out.println("성과등급: " + (info_emp[i].getGrade() - 1));
+		for (int j = 0; j < num_emp; j++) {
+			if (key.equals(info_emp[j].getKbpin())) {
+				for (int i = 0; i < num_work; i++) {
+					if (key.equals(info_work[i].getKbpin())) {
+						System.out.println("=========근무일자: " + info_work[i].getWorkdate() + " 현황==============");
+						System.out.println("사번: " + info_emp[j].getKbpin());
+						System.out.println("이름: " + info_emp[j].getName());
+						System.out.println("근무일자: " + info_work[i].getWorkdate());
+						System.out.println("고용 형태: " + info_emp[j].getEmptype());
+						System.out.println("주간 근무 시간: " + info_work[i].getDayworktime());
+						System.out.println("야간 근무 시간: " + info_work[i].getNightworktime());
+						System.out.println("주말 근무 시간: " + info_work[i].getHoildyworktime());
+						System.out.println("연차: " + (info_emp[j].getJoindate() - 1));
+						System.out.println("고용형태: " + (info_emp[j].getEmptype() - 1));
+						System.out.println("성과등급: " + (info_emp[j].getGrade() - 1));
 						System.out.println("주간 급여: " + day_salary[save].getDay_daysalary());
 						System.out.println("야간 급여: " + day_salary[save].getNight_daysalary());
 						System.out.println("휴일 급여: " + day_salary[save].getHoliday_daysalary());
@@ -229,7 +230,7 @@ public class Salary_day_pro {
 			for (int j = 0; j < num_emp; j++) {
 				if (key.equals(info_emp[i].getKbpin()) & key.equals(day_salary[j].getKbpin())
 						& info_emp[i].getAnniversary().equals(now_dt)) {
-					System.out.println("생일 축하금: " + day_salary[j].getBirthbonus());
+					System.out.println("결혼기념일 축하금: " + day_salary[j].getBirthbonus());
 				}
 				if (key.equals(info_emp[i].getKbpin()) & key.equals(day_salary[j].getKbpin())
 						& info_emp[i].getMatebirth().equals(now_dt)) {
@@ -241,31 +242,19 @@ public class Salary_day_pro {
 				}
 			}
 		}
-		for (int i = 0; i < num_emp; i++) {
-			for (int j = 0; j < num_emp; j++) {
-				if (key.equals(info_emp[i].getKbpin()) & key.equals(day_salary[j].getKbpin())) {
-					System.out.println("==========================================");
-					System.out.println("총 급여: " + day_salary[j].getTotal_daysalary());
-					System.out.println("지급 은행: " + info_emp[j].getSalarybank());
-					System.out.println("지급 계좌: " + info_emp[j].getSalaryaccount());
-					System.out.println("==========================================");
 
-				}
-			}
-		}
 	}
 
 	public void salary_month(String kbpin, String workdate) { // 월단위 급여 산출
 		double salary_month = 0;
-		int check = 0;
 
-		for (int i = 0; i < save; i++) {
-			System.out.println(day_salary[i].getKbpin());
-			System.out.println(kbpin);
+		for (int i = 0; i < num_work; i++) {
+
 			if ((day_salary[i].getKbpin().equals(kbpin))
 					&& day_salary[i].getWorkdate().substring(0, 6).equals(workdate)) {
 				salary_month += (double) day_salary[i].getTotal_daysalary();
-				check = i;
+				System.out.println(kbpin);
+
 			}
 		}
 		;
@@ -273,8 +262,8 @@ public class Salary_day_pro {
 		System.out.println("세금 비율: " + tax.tax(salary_month) + "%");
 		salary_month *= (1 - tax.tax(salary_month));
 		System.out.println("[계산 결과]");
-		System.out.println(info_emp[check].getName() + "(사번: " + kbpin + ")의 " + workdate.substring(0, 4) + "년 "
-				+ workdate.substring(4, 6) + "월 세후 급여는 " + (salary_month) + "원 입니다.");
+		System.out.println("사번이 " + kbpin + "인 직원의 " + workdate.substring(0, 4) + "년 " + workdate.substring(4, 6)
+				+ "월 세후 급여는 " + (salary_month) + "원 입니다.");
 
 	}
 
