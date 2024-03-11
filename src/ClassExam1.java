@@ -1,9 +1,7 @@
 
 public class ClassExam1 {
 	
-	private int a;
-	private char s;
-	private float c;
+
 	
 	public static void main(String[] args) {
 //
