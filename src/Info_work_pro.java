@@ -1,11 +1,12 @@
 
-public class Workinfo_pro {
+public class Info_work_pro {
 	private String kbpin;
 	private String workdate;
 	private int dayworktime;
 	private int nightworktime;
 	private int hoildyworktime;
 
+	
 	public String getKbpin() {
 		return kbpin;
 	}

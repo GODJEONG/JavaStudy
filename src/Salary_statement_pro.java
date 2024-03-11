@@ -1,5 +1,5 @@
 
-public class Day_salary_pro {
+public class Salary_statement_pro {
 	private String kbpin;
 	private String workdate;
 	private int day_daysalary;
@@ -10,7 +10,7 @@ public class Day_salary_pro {
 	private int anniversarybonus=0;
 	private int total_daysalary ;
 
-	public Day_salary_pro() {
+	public Salary_statement_pro() {
 	};
 
 	

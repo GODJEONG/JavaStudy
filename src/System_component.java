@@ -1,6 +1,5 @@
 
-public class Salaryinfo2_pro {
-
+public class System_component {
 	private int workyear;
 	private int emptype;
 	private int grade;
@@ -8,7 +7,7 @@ public class Salaryinfo2_pro {
 	private int salary_nightwork;
 	private int salary_hoildaywork;
 
-	public Salaryinfo2_pro(int workyear, int emptype, int grade, int salary_daywork, int salary_nightwork,
+	public System_component(int workyear, int emptype, int grade, int salary_daywork, int salary_nightwork,
 			int salary_hoildaywork) {
 		this.workyear = workyear;
 		this.emptype = emptype;

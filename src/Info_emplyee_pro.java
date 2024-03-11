@@ -1,5 +1,5 @@
 
-public class Employee_pro {
+public class Info_emplyee_pro {
 	private String kbpin;
 	private String name;
 	private int joindate;

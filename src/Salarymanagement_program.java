@@ -1,15 +1,17 @@
+
+// 급여 관리 프로그램
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-public class Salary_day_pro {
+public class Salarymanagement_program {
 
-	Salaryinfo_pro salaryinfo = new Salaryinfo_pro(); // 급여 기본 체계(연차,고용형태,성과등급,성과급)
-	Employee_pro[] info_emp = new Employee_pro[999]; // 고객 기본 정보 setter&getter
-	Workinfo_pro[] info_work = new Workinfo_pro[999]; // 일자별 근무 정보 setter&getter
-	Day_salary_pro[] day_salary = new Day_salary_pro[999]; // 고객별 일자별 급여
+	System_salary_pro salaryinfo = new System_salary_pro(); // 급여 기본 체계(연차,고용형태,성과등급,성과급)
+	Info_emplyee_pro[] info_emp = new Info_emplyee_pro[999]; // 고객 기본 정보 setter&getter
+	Info_work_pro[] info_work = new Info_work_pro[999]; // 일자별 근무 정보 setter&getter
+	Salary_statement_pro[] day_salary = new Salary_statement_pro[999]; // 고객별 일자별 급여
 	SimpleDateFormat format = new SimpleDateFormat("MMdd"); // 오늘 == 생일 및 결혼축하금 비교 // 성과금 활용
-	Tax_pro tax = new Tax_pro(); // 월단위 급여 이상 계산 시 세금 반영 Class
+	System_tax_pro tax = new System_tax_pro(); // 월단위 급여 이상 계산 시 세금 반영 Class
 	Date now = new Date();
 	String now_dt = format.format(now);
 
@@ -22,7 +24,7 @@ public class Salary_day_pro {
 
 	public static void main(String[] args) {
 
-		Salary_day_pro salary = new Salary_day_pro();
+		Salarymanagement_program salary = new Salarymanagement_program();
 
 		System.out.println("안녕하세요, 급여 관리 시스템입니다.");
 		do {
@@ -33,7 +35,7 @@ public class Salary_day_pro {
 
 			switch (salary.f) {
 			case 1: // 직원 정보 입력 > info_emp(고객 기본 정보)
-				salary.info_emp[salary.num_emp] = new Employee_pro();
+				salary.info_emp[salary.num_emp] = new Info_emplyee_pro();
 				System.out.println("==========================================");
 				System.out.println("(관리자용)직원 정보를 입력해주세요. / 최초 한번만 이용");
 				System.out.print("사번: ");
@@ -63,7 +65,7 @@ public class Salary_day_pro {
 				break;
 
 			case 2: // 근무 정보 입력 info_emp()
-				salary.info_work[salary.num_work] = new Workinfo_pro();
+				salary.info_work[salary.num_work] = new Info_work_pro();
 				System.out.println("==========================================");
 				System.out.println("(관리자용)근무 정보를 입력해주세요 ");
 				System.out.print("사번: ");
@@ -126,7 +128,7 @@ public class Salary_day_pro {
 			if (key.equals(info_emp[j].getKbpin())) {
 				for (int i = 0; i < num_work; i++) {
 					// System.out.print(day_salary[i]);
-					day_salary[i] = new Day_salary_pro();
+					day_salary[i] = new Salary_statement_pro();
 					if (key.equals(info_work[i].getKbpin())) {
 						day_salary[i].setKbpin(info_emp[j].getKbpin());
 						day_salary[i].setWorkdate(info_work[i].getWorkdate());
@@ -158,16 +160,16 @@ public class Salary_day_pro {
 		for (int i = 0; i < num_emp; i++) {
 			for (int j = 0; j < num_work; j++) {
 				if (key.equals(info_work[j].getKbpin()) & key.equals(day_salary[j].getKbpin())
-						& info_work[j].getWorkdate().substring(4,8).equals(info_emp[i].getAnniversary())) {
+						& info_work[j].getWorkdate().substring(4, 8).equals(info_emp[i].getAnniversary())) {
 
 					day_salary[j].setBirthbonus(500000);
 				}
 				if (key.equals(info_work[j].getKbpin()) & key.equals(day_salary[j].getKbpin())
-						&  info_work[j].getWorkdate().substring(4,8).equals(info_emp[i].getMatebirth())) {
+						& info_work[j].getWorkdate().substring(4, 8).equals(info_emp[i].getMatebirth())) {
 					day_salary[j].setCongratebonus(200000);
 				}
 				if (key.equals(info_work[j].getKbpin()) & key.equals(day_salary[j].getKbpin())
-						&  info_work[j].getWorkdate().substring(4,8).equals(info_emp[i].getParentbirth())) {
+						& info_work[j].getWorkdate().substring(4, 8).equals(info_emp[i].getParentbirth())) {
 					day_salary[j].setAnniversarybonus(200000);
 
 				}
@@ -187,8 +189,6 @@ public class Salary_day_pro {
 	}
 
 	public void salary_day1() { // 일단위 급여 산출
-
-		// day_salary[save] = new Day_salary_pro();
 
 		System.out.println("==========================================");
 		System.out.println("[일 단위 급여] ");
@@ -230,17 +230,19 @@ public class Salary_day_pro {
 
 		for (int i = 0; i < num_emp; i++) {
 			for (int j = 0; j < num_work; j++) {
-				if (key.equals(info_emp[i].getKbpin()) & key.equals(day_salary[j].getKbpin())
-						& info_emp[i].getAnniversary().substring(0,2).equals(info_work[j].getWorkdate().substring(4,6))) {
+				if (key.equals(info_emp[i].getKbpin()) & key.equals(day_salary[j].getKbpin()) & info_emp[i]
+						.getAnniversary().substring(0, 2).equals(info_work[j].getWorkdate().substring(4, 6))) {
 
 					System.out.println("결혼기념일 축하금: " + day_salary[j].getBirthbonus());
 				}
-				if (key.equals(info_emp[i].getKbpin()) & key.equals(day_salary[j].getKbpin())
-						& info_emp[i].getMatebirth().substring(0,2).equals(info_work[j].getWorkdate().substring(4,8))) {
+				if (key.equals(info_emp[i].getKbpin()) & key.equals(day_salary[j].getKbpin()) & info_emp[i]
+						.getMatebirth().substring(0, 2).equals(info_work[j].getWorkdate().substring(4, 6))) {
+
 					System.out.println("배우자생일 축하금: " + day_salary[j].getCongratebonus());
 				}
-				if (key.equals(info_emp[i].getKbpin()) & key.equals(day_salary[j].getKbpin())
-						& info_emp[i].getParentbirth().substring(0,2).equals(info_work[j].getWorkdate().substring(4,8))) {
+				if (key.equals(info_emp[i].getKbpin()) & key.equals(day_salary[j].getKbpin()) & info_emp[i]
+						.getParentbirth().substring(0, 2).equals(info_work[j].getWorkdate().substring(4, 6))) {
+
 					System.out.println("부모님생일 축하금: " + day_salary[j].getAnniversarybonus());
 				}
 			}

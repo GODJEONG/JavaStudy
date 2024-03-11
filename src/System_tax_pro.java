@@ -1,10 +1,10 @@
 
-public class Tax_pro {
+public class System_tax_pro {
 
 	private double salary = 0;
 
 	public double tax(double salary) {
-		Tax_pro tx = new Tax_pro();
+		System_tax_pro tx = new System_tax_pro();
 
 		if (tx.salary < 1000000) {
 			return 0.05;
