@@ -1,6 +1,7 @@
 
 public class Day_salary_pro {
 	private String kbpin;
+	private String workdate;
 	private int day_daysalary;
 	private int night_daysalary;
 	private int holiday_daysalary;
@@ -11,6 +12,15 @@ public class Day_salary_pro {
 
 	public Day_salary_pro() {
 	};
+
+	
+	public String getWorkdate() {
+		return workdate;
+	}
+
+	public void setWorkdate(String workdate) {
+		this.workdate = workdate;
+	}
 
 	public int getBirthbonus() {
 		return birthbonus;

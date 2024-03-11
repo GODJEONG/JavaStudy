@@ -1,9 +1,9 @@
 
 public class Tax_pro {
 
-	private int salary = 0;
+	private double salary = 0;
 
-	public double tax(int salary) {
+	public double tax(double salary) {
 		Tax_pro tx = new Tax_pro();
 
 		if (tx.salary < 1000000) {

@@ -10,7 +10,7 @@ public class Employee_pro {
 	private int grade;
 	private int salaryday;
 	private String salarybank;
-	private int salaryaccount;
+	private String salaryaccount;
 
 	public String getKbpin() {
 		return kbpin;
@@ -92,11 +92,11 @@ public class Employee_pro {
 		this.salarybank = salarybank;
 	}
 
-	public int getSalaryaccount() {
+	public String getSalaryaccount() {
 		return salaryaccount;
 	}
 
-	public void setSalaryaccount(int salaryaccount) {
+	public void setSalaryaccount(String salaryaccount) {
 		this.salaryaccount = salaryaccount;
 	}
 

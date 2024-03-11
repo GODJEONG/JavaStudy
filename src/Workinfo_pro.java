@@ -1,7 +1,7 @@
 
 public class Workinfo_pro {
 	private String kbpin;
-	private int workdate;
+	private String workdate;
 	private int dayworktime;
 	private int nightworktime;
 	private int hoildyworktime;
@@ -14,11 +14,11 @@ public class Workinfo_pro {
 		this.kbpin = kbpin;
 	}
 
-	public int getWorkdate() {
+	public String getWorkdate() {
 		return workdate;
 	}
 
-	public void setWorkdate(int workdate) {
+	public void setWorkdate(String workdate) {
 		this.workdate = workdate;
 	}
 
