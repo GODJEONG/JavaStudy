@@ -81,9 +81,7 @@ public class Salary_day_pro {
 				break;
 
 			case 3:
-				salary.save = salary.num_work;
-				System.out.println(salary.save);
-				salary.salarycalcul(salary.save);
+				salary.salarycalcul();
 				System.out.println("급여 계산 완료");
 				break;
 			case 4:
@@ -117,9 +115,8 @@ public class Salary_day_pro {
 		} while (salary.f != 5);
 	}
 
-	public void salarycalcul(int save) { // 급여 계산 함수
-		day_salary[save] = new Day_salary_pro();
-
+	public void salarycalcul() { // 급여 계산 함수
+		
 		System.out.println("==========================================");
 		System.out.print("[급여 계산] 사번 입력: ");
 		String key = sc.next();
@@ -127,9 +124,10 @@ public class Salary_day_pro {
 
 		for (int j = 0; j < num_emp; j++) {
 			if (key.equals(info_emp[j].getKbpin())) {
-				for (int i = 0; i < save; i++) {
+				for (int i = 0; i < num_work; i++) {
+					System.out.print(day_salary[i]);
+					day_salary[i] = new Day_salary_pro();
 					if (key.equals(info_work[i].getKbpin())) {
-
 						day_salary[i].setKbpin(info_emp[j].getKbpin());
 						day_salary[i].setWorkdate(info_work[i].getWorkdate());
 						day_salary[i].setDay_daysalary((int) info_work[i].getDayworktime()
