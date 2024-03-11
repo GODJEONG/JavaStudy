@@ -158,16 +158,16 @@ public class Salary_day_pro {
 		for (int i = 0; i < num_emp; i++) {
 			for (int j = 0; j < num_work; j++) {
 				if (key.equals(info_work[j].getKbpin()) & key.equals(day_salary[j].getKbpin())
-						& info_emp[i].getAnniversary().equals(now_dt) & info_work[j].getWorkdate().equals(info_emp[i].getAnniversary())) {
+						& info_work[j].getWorkdate().substring(4,8).equals(info_emp[i].getAnniversary())) {
 
 					day_salary[j].setBirthbonus(500000);
 				}
 				if (key.equals(info_work[j].getKbpin()) & key.equals(day_salary[j].getKbpin())
-						& info_emp[i].getMatebirth().equals(now_dt) & info_work[j].getWorkdate().equals(info_emp[i].getMatebirth())) {
+						&  info_work[j].getWorkdate().substring(4,8).equals(info_emp[i].getMatebirth())) {
 					day_salary[j].setCongratebonus(200000);
 				}
 				if (key.equals(info_work[j].getKbpin()) & key.equals(day_salary[j].getKbpin())
-						& info_emp[i].getParentbirth().equals(now_dt) & info_work[j].getWorkdate().equals(info_emp[i].getParentbirth())) {
+						&  info_work[j].getWorkdate().substring(4,8).equals(info_emp[i].getParentbirth())) {
 					day_salary[j].setAnniversarybonus(200000);
 
 				}
