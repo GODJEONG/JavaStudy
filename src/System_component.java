@@ -15,7 +15,6 @@ public class System_component {
 		this.salary_daywork = salary_daywork;
 		this.salary_nightwork = salary_nightwork;
 		this.salary_hoildaywork = salary_hoildaywork;
-
 	}
 
 	public int getWorkyear() {

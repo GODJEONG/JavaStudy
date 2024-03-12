@@ -162,15 +162,15 @@ public class Salarymanagement_program {
 				if (key.equals(info_work[j].getKbpin()) & key.equals(day_salary[j].getKbpin())
 						& info_work[j].getWorkdate().substring(4, 8).equals(info_emp[i].getAnniversary())) {
 
-					day_salary[j].setBirthbonus(500000);
+					day_salary[j].setAnniversarybonus(500000);
 				}
 				if (key.equals(info_work[j].getKbpin()) & key.equals(day_salary[j].getKbpin())
 						& info_work[j].getWorkdate().substring(4, 8).equals(info_emp[i].getMatebirth())) {
-					day_salary[j].setCongratebonus(200000);
+					day_salary[j].setBirthbonus(200000);
 				}
 				if (key.equals(info_work[j].getKbpin()) & key.equals(day_salary[j].getKbpin())
 						& info_work[j].getWorkdate().substring(4, 8).equals(info_emp[i].getParentbirth())) {
-					day_salary[j].setAnniversarybonus(200000);
+					day_salary[j].setCongratebonus(200000);
 
 				}
 			}
@@ -233,17 +233,17 @@ public class Salarymanagement_program {
 				if (key.equals(info_emp[i].getKbpin()) & key.equals(day_salary[j].getKbpin()) & info_emp[i]
 						.getAnniversary().substring(0, 2).equals(info_work[j].getWorkdate().substring(4, 6))) {
 
-					System.out.println("결혼기념일 축하금: " + day_salary[j].getBirthbonus());
+					System.out.println("결혼기념일 축하금: " + day_salary[j].getAnniversarybonus());
 				}
 				if (key.equals(info_emp[i].getKbpin()) & key.equals(day_salary[j].getKbpin()) & info_emp[i]
 						.getMatebirth().substring(0, 2).equals(info_work[j].getWorkdate().substring(4, 6))) {
 
-					System.out.println("배우자생일 축하금: " + day_salary[j].getCongratebonus());
+					System.out.println("배우자생일 축하금: " + day_salary[j].getBirthbonus());
 				}
 				if (key.equals(info_emp[i].getKbpin()) & key.equals(day_salary[j].getKbpin()) & info_emp[i]
 						.getParentbirth().substring(0, 2).equals(info_work[j].getWorkdate().substring(4, 6))) {
 
-					System.out.println("부모님생일 축하금: " + day_salary[j].getAnniversarybonus());
+					System.out.println("부모님생일 축하금: " + day_salary[j].getCongratebonus());
 				}
 			}
 		}

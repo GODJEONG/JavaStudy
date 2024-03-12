@@ -5,9 +5,9 @@ public class Salary_statement_pro {
 	private int day_daysalary;
 	private int night_daysalary;
 	private int holiday_daysalary;
-	private int birthbonus=0;
-	private int congratebonus =0;
-	private int anniversarybonus=0;
+	private int birthbonus=0;  // 배우자
+	private int congratebonus =0; // 부모님
+	private int anniversarybonus=0; // 결혼기념일
 	private int total_daysalary ;
 
 	public Salary_statement_pro() {
