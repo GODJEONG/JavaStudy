@@ -24,8 +24,8 @@ public class IasAExam01 extends TT {
 	public static void main(String[] args) {
 
 		IasAExam01 isa = new IasAExam01();
-		//System.out.println(isa);
-		//System.out.println(isa.toString());
+		System.out.println(isa);
+		System.out.println(isa.toString());
 		isa.disp();
 	}
 
