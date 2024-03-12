@@ -1,6 +1,7 @@
 class TT {
 	
 	public TT() {
+		super();
 		System.out.println("SUPER");
 	}
 	public String toString() {

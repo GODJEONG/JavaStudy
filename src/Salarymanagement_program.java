@@ -5,13 +5,12 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class Salarymanagement_program {
-
-	System_salary_pro salaryinfo = new System_salary_pro(); // 급여 기본 체계(연차,고용형태,성과등급,성과급)
 	Info_emplyee_pro[] info_emp = new Info_emplyee_pro[999]; // 고객 기본 정보 setter&getter
 	Info_work_pro[] info_work = new Info_work_pro[999]; // 일자별 근무 정보 setter&getter
 	Salary_statement_pro[] day_salary = new Salary_statement_pro[999]; // 고객별 일자별 급여
-	SimpleDateFormat format = new SimpleDateFormat("MMdd"); // 오늘 == 생일 및 결혼축하금 비교 // 성과금 활용
+	System_salary_pro salaryinfo = new System_salary_pro(); // 급여 기본 체계(연차,고용형태,성과등급,성과급)	
 	System_tax_pro tax = new System_tax_pro(); // 월단위 급여 이상 계산 시 세금 반영 Class
+	SimpleDateFormat format = new SimpleDateFormat("MMdd"); // 오늘 == 생일 및 결혼축하금 비교 // 성과금 활용
 	Date now = new Date();
 	String now_dt = format.format(now);
 
