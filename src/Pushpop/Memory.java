@@ -5,8 +5,12 @@ abstract class Memory {
 	private int i = 0;
 
 	public void push(int a) {
-		arr[i] = a;
-		i++;
+		if (i > (arr.length - 1)) {
+			System.out.println("배열이 가득 찼습니다.");
+		} else {
+			arr[i] = a;
+			i++;
+		}
 	};
 
 	public int setcnt(int i) {
@@ -35,9 +39,13 @@ class Myqueue extends Memory {
 
 	@Override
 	public void pop() {
-		for (int i = 0; i <4; i++) {
-			arr[i] = arr[i+1];
-			arr[4]=0;
+		if (getcnt() == 0) {
+			System.out.println("pop할 정보가 없습니다.");
+		} else {
+			for (int i = 0; i < arr.length - 1; i++) {
+				arr[i] = arr[i + 1];
+			}
+			arr[4] = 0;
 		}
 //		arr[0]=arr[1];
 //		arr[1]=arr[2];
