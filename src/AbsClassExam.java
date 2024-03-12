@@ -34,5 +34,7 @@ public class AbsClassExam {
 		rect.draw();
 		Circle cir = new Circle();
 		cir.draw();
+		String a="20240301";
+		System.out.println(a.substring(4,6));
 	}
 }

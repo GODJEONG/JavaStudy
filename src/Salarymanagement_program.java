@@ -194,8 +194,9 @@ public class Salarymanagement_program {
 		System.out.print("사번 입력: ");
 		String key = sc.next();
 		int check = 0; // 입력한 사번과 동일한 사번 있는지 체크 변수
-
+		
 		for (int j = 0; j < num_emp; j++) {
+			save=0;
 			if (key.equals(info_emp[j].getKbpin())) {
 				for (int i = 0; i < num_work; i++) {
 					if (key.equals(info_work[i].getKbpin())) {
@@ -225,7 +226,7 @@ public class Salarymanagement_program {
 			System.out.println("입력한 직원 정보와 일치하는 근무 정보가 없어 급여를 조회할 수 없습니다.");
 		}
 		System.out.println("===========근무 외 급여==============");
-		System.out.println("* 근무외급여는 해당 월에 최소 1번은 출근해야 지급됩니다. ");
+		System.out.println("* 근무외급여는 해당일에 출근해야 지급됩니다. ");
 
 		for (int i = 0; i < num_emp; i++) {
 			for (int j = 0; j < num_work; j++) {
