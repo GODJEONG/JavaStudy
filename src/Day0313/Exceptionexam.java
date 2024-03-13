@@ -10,13 +10,15 @@ public class Exceptionexam {
 			System.out.println(3 / num);
 
 		} catch (ArithmeticException ae) { // 예외처리
-//ae.printStackTrace();
 			System.out.println("0으로 입력하지마세요~");
-		}
-		catch (Exception in) {
+			return;
+
+		} catch (Exception in) {
 			System.out.println("제대로 입력해");
 		}
-		System.out.println("Bye");
 
+		finally {
+			System.out.println("Bye");
+		}
 	}
 }

@@ -24,6 +24,7 @@ abstract class Memory {
 	public abstract void pop();
 
 }
+// -----------------------------------------------
 
 class Mystack extends Memory {
 
@@ -54,6 +55,5 @@ class Myqueue extends Memory {
 //		arr[4]=0;
 		setcnt(getcnt() - 1);
 		
-		String
 	}
 }

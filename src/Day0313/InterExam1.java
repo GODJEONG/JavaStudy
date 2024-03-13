@@ -7,9 +7,10 @@ public class InterExam1 implements CCC {
 		CCC inter = new InterExam1(); // CCC 인터페이스로 객체 선언 가능
 
 		inter.disp();
+		in.disp();
 		inter.disp2();
 		in.disp3();
-		in.disp();
+		
 	}
 
 	public void disp3() {
