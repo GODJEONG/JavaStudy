@@ -9,6 +9,7 @@ public class Pushpop2 {
 		Mystack st = new Mystack();
 		Myqueue qu = new Myqueue();
 		Memory me = null;
+		
 
 		int c1 = 0, c2 = 0; // c1 - 스택큐 선택 c2 - 배열 조회, push ,pop, 종료
 

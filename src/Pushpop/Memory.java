@@ -53,5 +53,7 @@ class Myqueue extends Memory {
 //		arr[3]=arr[4];
 //		arr[4]=0;
 		setcnt(getcnt() - 1);
+		
+		String
 	}
 }
