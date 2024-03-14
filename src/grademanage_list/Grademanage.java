@@ -1,4 +1,4 @@
-package grademanage;
+package grademanage_list;
 
 import java.util.ArrayList;
 import java.util.Scanner;

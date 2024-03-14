@@ -1,9 +1,10 @@
-package grademanage;
+package grademanage_set;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Scanner;
 
 public class Summary_grade {
+	
 	public Inout inputGrade(Scanner sc) { // 왜 스태틱만 가능한가?
 		System.out.print("이름 입력: ");
 		String name = sc.next();
@@ -13,12 +14,12 @@ public class Summary_grade {
 		int math = sc.nextInt();
 		System.out.print("영어 성적 입력: ");
 		int eng = sc.nextInt();
-		return new Inout(name, kor, math, eng); // ???
+		return new Inout(name, kor, eng, math); // ???
 	}
 
 	// ----------------------------------------------------
 
-	public void ouputGrade(ArrayList<Inout> a) {
+	public void ouputGrade(HashSet<Inout> a) {
 		for (Inout i : a) {
 			System.out.println("이름: " + i.getName());
 			System.out.print("국어: " + i.getKor() + "점 ");
@@ -30,7 +31,7 @@ public class Summary_grade {
 		}
 	}
 
-	public void searchStudent(ArrayList<Inout> a, Scanner sc) {
+	public void searchStudent(HashSet<Inout> a, Scanner sc) {
 		System.out.print("조회할 학생 이름을 입력하세요: ");
 		String student = sc.next();
 		int aa = 0;
@@ -50,7 +51,7 @@ public class Summary_grade {
 		}
 	}
 
-	public void outputavgover(ArrayList<Inout> a, Scanner sc) {
+	public void outputavgover(HashSet<Inout> a, Scanner sc) {
 		System.out.print("평균 점수를 입력하세요: ");
 		int avg = sc.nextInt();
 		int aa = 0;
@@ -71,7 +72,7 @@ public class Summary_grade {
 
 	}
 
-	public void modifygrade(ArrayList<Inout> a, Scanner sc) {
+	public void modifygrade(HashSet<Inout> a, Scanner sc) {
 		System.out.print("수정할 학생 이름을 입력하세요: ");
 		String student2 = sc.next();
 		int aa = 0;

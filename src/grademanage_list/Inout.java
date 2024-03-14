@@ -1,4 +1,4 @@
-package grademanage;
+package grademanage_list;
 
 public class Inout {
 
