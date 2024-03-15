@@ -10,14 +10,14 @@ public class Event3 extends Frame implements ActionListener {
 	TextArea ta;
 	TextField tf;
 
-	class Textfieldadapter extends KeyAdapter {
-		public void keyTyped(KeyEvent e) {
-			if (e.getKeyChar() == KeyEvent.VK_ENTER) {
-				ta.append(tf.getText() + "\n");
-				tf.setText("");
-			}
-		}
-	}
+//	class Textfieldadapter extends KeyAdapter {
+//		public void keyTyped(KeyEvent e) {
+//			if (e.getKeyChar() == KeyEvent.VK_ENTER) {
+//				ta.append(tf.getText() + "\n");
+//				tf.setText("");
+//			}
+//		}
+//	}
 
 	public Event3() {
 		super("Adapter Eaxm");
@@ -36,7 +36,16 @@ public class Event3 extends Frame implements ActionListener {
 				System.exit(0);
 			}
 		});
-		tf.addKeyListener(new Textfieldadapter());
+		tf.addKeyListener(new KeyAdapter() {
+			public void keyTyped(KeyEvent e) {
+				if (e.getKeyChar() == KeyEvent.VK_ENTER) {
+					ta.append(tf.getText() + "\n");
+					tf.setText("");
+				}
+			}
+		}
+
+		);
 
 		p1.add(tf);
 		p2.add(ta);
