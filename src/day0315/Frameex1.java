@@ -1,4 +1,4 @@
-package Day0315;
+package day0315;
 
 import java.awt.Frame;
 
