@@ -33,7 +33,7 @@ public class Frameex3 {
 		f.add(p);
 		
 		f.setLocation(300,300);
-		f.setSize(300,100);
+		f.setSize(300,300);
 		f.setVisible(true);
 
 	}
