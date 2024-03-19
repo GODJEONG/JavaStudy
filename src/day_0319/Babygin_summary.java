@@ -1,4 +1,4 @@
-package day0319_babygin;
+package day_0319;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -16,7 +16,7 @@ public class Babygin_summary {
 		go = 1;
 	}
 
-	public static void main(String[] args) {
+	public void babygin() {
 		Babygin_summary bs = new Babygin_summary();
 
 		do {
