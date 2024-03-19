@@ -1,4 +1,4 @@
-package day0319;
+package day0319_baseball;
 
 import java.util.Scanner;
 
