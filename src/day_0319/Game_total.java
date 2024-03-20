@@ -28,10 +28,10 @@ public class Game_total {
 			System.out.println("진행할 프로그램을 선택하세요");
 			System.out.println("1.숫자야구게임 2.작은수변경 3.정돈된 수 4.baby-gin");
 			System.out.print("입력: ");
-			gt.a = gt.sc.nextInt();
+			gt.a = gt.sc.nextInt();  
 			switch (gt.a) {
 			case 1:
-				gt.gb.play();
+				gt.gb.play();  // 동적바인딩 반영할수 잇다
 				break;
 			case 2:
 				gt.ms.minimize();

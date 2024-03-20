@@ -48,6 +48,7 @@ public class Babygin_calcul {
 				total -= 3;
 				run++;	
 			}
+			
 		}
 	}
 
