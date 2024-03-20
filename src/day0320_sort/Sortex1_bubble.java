@@ -1,9 +1,9 @@
 package day0320_sort;
 
-public class Sortex1 {
+public class Sortex1_bubble {
 
 	public static void main(String[] args) {
-		Sortex1 se = new Sortex1();
+		Sortex1_bubble se = new Sortex1_bubble();
 		int data[] = { 90, 78, 100, 30, 55 };
 		se.bubbleSort1(data);
 

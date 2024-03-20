@@ -2,16 +2,16 @@ package day0320_sort;
 
 import java.util.Random;
 
-public class Sortex2 {
+public class Sortex2_insert {
 	
 	private int comparisonCnt;
 	
-	public Sortex2() {
+	public Sortex2_insert() {
 		comparisonCnt =0;
 	}
 
 	public static void main(String[] args) {
-		Sortex2 se = new Sortex2();
+		Sortex2_insert se = new Sortex2_insert();
 
 		int data[] = new int[1000];
 		Random rd = new Random();
