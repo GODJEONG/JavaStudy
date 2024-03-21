@@ -46,6 +46,8 @@ public class Sortex2_insert {
 			a[j]=tmp;
 		}
 	}
+	
+
 		
 	public void InsertionSort(int[] data) {
 
@@ -69,4 +71,9 @@ public class Sortex2_insert {
 	            data[searchIndex+1] = keyValue; //while이 끝날 경우, 해당 index에 값 생성, + 위에서 index가 --되었으므로 다시 +1 하기
 	        }
 	}
+	
+	
+	
+	
+	
 }

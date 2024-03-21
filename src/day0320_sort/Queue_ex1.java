@@ -91,6 +91,21 @@ public class Queue_ex1 {
 		}
 	}
 
+	public void shift1() {
+		if (rear == 5 & start > 0) {
+			int n = rear - start;
+			int i;
+			for (i = 0; i < n; i++) {
+				q[i] = q[start];
+				q[start++] = 0;
+			}
+
+			start = 0;
+			rear = i;
+
+		}
+	}
+
 	public void show() {
 		// System.out.print(q.length);
 		for (int i = 0; i < q.length; i++) {

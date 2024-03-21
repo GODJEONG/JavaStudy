@@ -13,12 +13,12 @@ public class Sortex1_bubble {
 	}
 
 	public int[] bubbleSort1(int[] a) {
-		int temp =0;
-		int cnt_if=0;
+		int temp = 0;
+		int cnt_if = 0;
 		int cnt_for = 0;
-		
-		for(int i =0; i < a.length-1;i++) {
-			for(int j = 0; j< a.length-1-i;j++) {
+
+		for (int i = 0; i < a.length - 1; i++) {
+			for (int j = 0; j < a.length - 1 - i; j++) {
 				if (a[j] >= a[j + 1]) {
 					temp = a[j];
 					a[j] = a[j + 1];
@@ -31,7 +31,7 @@ public class Sortex1_bubble {
 		System.out.println("for문 횟수: " + cnt_for);
 		System.out.println("if문 횟수: " + cnt_if);
 		return a;
-		
+
 	}
 
 	public int[] bubbleSort(int[] a) {
