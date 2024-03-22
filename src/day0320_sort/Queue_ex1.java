@@ -60,10 +60,11 @@ public class Queue_ex1 {
 //			qe.xx = qe.sc.nextInt();
 //		} while (qe.xx == 1);
 
+	
 	}
 
 	public void enq(int a) {
-		shift();
+		shift1();
 		q[rear] = a;
 		rear++;
 		System.out.println("enqueue 완료");
@@ -102,6 +103,7 @@ public class Queue_ex1 {
 
 			start = 0;
 			rear = i;
+		  System.out.println("rear"+ rear);
 
 		}
 	}

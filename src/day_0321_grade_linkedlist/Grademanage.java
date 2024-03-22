@@ -29,7 +29,7 @@ public class Grademanage {
 
 			switch (gm.func) {
 			case 1:
-				gm.le.add();
+				gm.le.add(gm.le.info());
 				break;
 
 			case 2:
