@@ -1,18 +1,23 @@
-package day_0321_grade_linkedlist;
+package day0328_db;
 
 import java.util.Scanner;
 
-public class LinkedExam {
+public class Method_LinkedArray {
 
 	static Student_Info head;
 	static Student_Info cur;
 	static Student_Info newNode;
 	static Student_Info del;
+	static String del_name;
 	static Student_Info modi;
 
 	Scanner sc = new Scanner(System.in);
 
-	public LinkedExam() {
+	public Method_LinkedArray() {
+		head = cur = newNode = del = null;
+	}
+
+	public void init() {
 		head = cur = newNode = del = null;
 	}
 
@@ -29,7 +34,12 @@ public class LinkedExam {
 		return new Student_Info(name, kor, mat, eng);
 	}
 
-	public void add(Student_Info a) {
+	public Student_Info info_input(String name, int kor, int mat, int eng) {
+		return new Student_Info(name, kor, mat, eng);
+	}
+
+	public Student_Info add(Student_Info a) {
+
 		cur = head;
 		newNode = a;
 
@@ -47,16 +57,19 @@ public class LinkedExam {
 			newNode.next = cur.next;
 			cur.next = newNode;
 		}
+		return newNode;
 	}
 
-	public void del(Scanner sc) {
+	public String del(Scanner sc) {
 		cur = head;
+		System.out.print("[삭제 기능]삭제할 학생 이름을 입력하세요: ");
 		String x = sc.next();
+
 		if (cur.getName().equals(x)) {
 			del = head;
 			head = head.next;
 		} else {
-			while (true) {
+			while (cur.next != null) { // cur.next가 null인지 확인
 				if (cur.next.getName().equals(x)) {
 					del = cur.next;
 					cur.next = cur.next.next;
@@ -64,19 +77,22 @@ public class LinkedExam {
 				}
 				cur = cur.next;
 			}
+			if (cur.next == null) {
+				System.out.println("입력한 이름을 가진 학생을 찾을 수 없습니다.");
+				return null;
+			}
 		}
+		del_name = del.getName();
 		del.next = null;
 		del = null;
-
-		System.out.println("[삭제완료]");
 		prt();
+		return del_name;
 	}
 
 	public void prt() {
 		cur = head;
-		// 출력
-		System.out.println("[성적 조회]");
-		System.out.println("성적 조회는 평균 내림차순으로 출력됩니다.");
+		if (cur == null)
+			System.out.println("저장된 데이터가 없습니다.");
 
 		while (cur != null) {
 			cur.show();
@@ -114,14 +130,15 @@ public class LinkedExam {
 
 	}
 
-	public void modify(Scanner sc) {
+	public Student_Info modify(Scanner sc) {
 		cur = head;
-		System.out.println("수정할 학생 이름을 입력하세요: ");
-		String x = sc.next();
-
+		System.out.print("[수정 기능]수정할 학생 이름을 입력하세요: ");
+		String s = sc.next();
+		System.out.println(cur.getName());
 		System.out.println("[수정 사항] ");
-		if (cur.getName().equals(x)) {
-
+		if (cur == null) {
+			System.out.println("데이터가 없습니다.");
+		} else if (cur.getName().equals(s)) {
 			System.out.print("이름 입력: ");
 			cur.setName(sc.next());
 			System.out.print("국어 성적 입력: ");
@@ -135,31 +152,37 @@ public class LinkedExam {
 			head = cur.next;
 
 		} else {
-			while (true) {
-				if (cur.next.getName().equals(x)) {
-					break;
+			while (cur.next != null) {
+				{
+					if (cur.next.getName().equals(s)) {
+						break;
+					}
+					cur = cur.next;
 				}
-				cur = cur.next;
+				if (!cur.getName().equals(s)) { // 왜 cur null 해야되지?
+					System.out.println("입력한 이름을 가진 학생을 찾을 수 없습니다.");
+				} else {
+					System.out.print("이름 입력: ");
+					cur.next.setName(sc.next());
+					System.out.print("국어 성적 입력: ");
+					cur.next.setKor(sc.nextInt());
+					System.out.print("수학 성적 입력: ");
+					cur.next.setMat(sc.nextInt());
+					System.out.print("영어 성적 입력: ");
+					cur.next.setEng(sc.nextInt());
+					modi = cur.next;
+					// 수정 노드 제외하고 연결
+					cur.next = cur.next.next;
+				}
 			}
-
-			System.out.print("이름 입력: ");
-			cur.next.setName(sc.next());
-			System.out.print("국어 성적 입력: ");
-			cur.next.setKor(sc.nextInt());
-			System.out.print("수학 성적 입력: ");
-			cur.next.setMat(sc.nextInt());
-			System.out.print("영어 성적 입력: ");
-			cur.next.setEng(sc.nextInt());
-			modi = cur.next;
-
-			// 수정 노드 제외하고 연결
-			cur.next = cur.next.next;
 		}
-
+		System.out.println(cur.next.getName());
+		System.out.println(cur.next.getAvg());
 		add(modi);
 		System.out.println("===================================");
 		System.out.println("[수정 완료] 전체 결과 보여드립니다.");
 		prt();
+		return modi;
 	}
 
 }
