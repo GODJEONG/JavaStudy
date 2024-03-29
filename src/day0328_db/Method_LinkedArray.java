@@ -41,23 +41,22 @@ public class Method_LinkedArray {
 	public Student_Info add(Student_Info a) {
 
 		cur = head;
-		newNode = a;
 
-		if (head == null || newNode.getAvg() > cur.getAvg()) {
+		if (head == null || a.getAvg() > cur.getAvg()) {
 			// head로 추가 1. 맨 처음 추가 2. 입력값이 1번째 숫자보다 큰 경우
-			newNode.next = head;
-			head = newNode;
+			a.next = head;
+			head = a;
 		} else {
-			while (cur.next != null && newNode.getAvg() <= cur.next.getAvg()) {
+			while (cur.next != null && a.getAvg() <= cur.next.getAvg()) {
 				// 커서 다음이 null 인경우는 고려대상 x
 				// 커서는 항상 추가할 대상의 앞자리 위치
 				// 커서의 다음 수치가 추가할 수치보다 크면 커서 이동! > 추가할 위치의 전자리로!
 				cur = cur.next;
 			}
-			newNode.next = cur.next;
-			cur.next = newNode;
+			a.next = cur.next;
+			cur.next = a;
 		}
-		return newNode;
+		return a;
 	}
 
 	public String del(Scanner sc) {
@@ -134,12 +133,13 @@ public class Method_LinkedArray {
 		cur = head;
 		System.out.print("[수정 기능]수정할 학생 이름을 입력하세요: ");
 		String s = sc.next();
-		System.out.println(cur.getName());
+		System.out.println("1번" + cur.getName());
 		System.out.println("[수정 사항] ");
+
 		if (cur == null) {
 			System.out.println("데이터가 없습니다.");
 		} else if (cur.getName().equals(s)) {
-			System.out.print("이름 입력: ");
+			System.out.print("같다: 이름 입력: ");
 			cur.setName(sc.next());
 			System.out.print("국어 성적 입력: ");
 			cur.setKor(sc.nextInt());
@@ -152,32 +152,30 @@ public class Method_LinkedArray {
 			head = cur.next;
 
 		} else {
-			while (cur.next != null) {
-				{
-					if (cur.next.getName().equals(s)) {
-						break;
-					}
-					cur = cur.next;
+			while (true) {
+				if (cur.next.getName().equals(s)) {
+					break;
 				}
-				if (!cur.getName().equals(s)) { // 왜 cur null 해야되지?
-					System.out.println("입력한 이름을 가진 학생을 찾을 수 없습니다.");
-				} else {
-					System.out.print("이름 입력: ");
-					cur.next.setName(sc.next());
-					System.out.print("국어 성적 입력: ");
-					cur.next.setKor(sc.nextInt());
-					System.out.print("수학 성적 입력: ");
-					cur.next.setMat(sc.nextInt());
-					System.out.print("영어 성적 입력: ");
-					cur.next.setEng(sc.nextInt());
-					modi = cur.next;
-					// 수정 노드 제외하고 연결
-					cur.next = cur.next.next;
-				}
+				cur = cur.next;
 			}
+		    //System.out.println("cur:" + cur.getName());
+			//System.out.println("cur.next: " + cur.next.getName());
+
+			System.out.print("다르다: 이름 입력: ");
+			cur.next.setName(sc.next());
+			System.out.print("국어 성적 입력: ");
+			cur.next.setKor(sc.nextInt());
+			System.out.print("수학 성적 입력: ");
+			cur.next.setMat(sc.nextInt());
+			System.out.print("영어 성적 입력: ");
+			cur.next.setEng(sc.nextInt());
+			modi = cur.next;
+			// 수정 노드 제외하고 연결
+			cur.next = cur.next.next;
 		}
-		System.out.println(cur.next.getName());
-		System.out.println(cur.next.getAvg());
+		//	System.out.println("2번"+cur.next.getName());
+		//	System.out.println("3번"+cur.next.getAvg());
+
 		add(modi);
 		System.out.println("===================================");
 		System.out.println("[수정 완료] 전체 결과 보여드립니다.");

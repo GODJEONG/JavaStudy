@@ -1,9 +1,10 @@
 package day0328_db;
 
-import java.sql.Connection;
+import java.sql.Connection; // 데이터 베이스연결
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.ResultSet; // 결과 받는 객체
+import java.sql.SQLException;
 
 public class ConnectDatabase {
 
@@ -13,17 +14,27 @@ public class ConnectDatabase {
 	String url = "jdbc:mysql://localhost:3306/grade";
 	String id = "root";
 	String pw = "qwe123!@#";
+
 	Connection conn = null;
-	PreparedStatement pstmt = null; // query 전송 객체
+	PreparedStatement pstmt = null; // query 객체
 	ResultSet res = null; // select 쿼리문을 실행하고 결과를 Resultset로 받음(저장)
 
 	public ConnectDatabase() {
+		this("jdbc:mysql://localhost:3306/grade", "root", "qwe123!@#");
+	}
+
+	public ConnectDatabase(String url, String user, String pw) {
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver"); // Driver Load
+			Class.forName("com.mysql.cj.jdbc.Driver"); // Driver Load / JDBC 드라이버 로드
 			conn = DriverManager.getConnection(url, id, pw); // Mysql 연결 진행
-		} catch (Exception e) {
+		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			// e.printStackTrace();
+			System.err.println("데이터베이스 접속 중 오류가 발생했습니다: " + e.getMessage());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			// e.printStackTrace();
+			System.err.println("쿼리에서 오류가 발생했습니다: " + e.getMessage());
 		}
 	};
 
@@ -32,7 +43,7 @@ public class ConnectDatabase {
 		res = null;
 
 		try {
-			pstmt = conn.prepareStatement("select * from student_info");
+			pstmt = conn.prepareStatement("select * from student_info"); // 쿼리 입력
 			res = pstmt.executeQuery();
 
 			while (res.next()) {
@@ -79,7 +90,7 @@ public class ConnectDatabase {
 
 			pstmt.setString(1, x);
 			int row = pstmt.executeUpdate(); // 쿼리실행
-			System.out.println("*****" + x + " 님 정보 삭제 완료" + "(" + row + "번째 row)*****");
+			System.out.println("*****" + x + " 님 정보 삭제 완료*****");
 
 		} catch (
 
@@ -102,8 +113,8 @@ public class ConnectDatabase {
 			pstmt.setFloat(5, si.getAvg());
 			pstmt.setString(6, si.getName());
 
-			int row = pstmt.executeUpdate(); // 쿼리실행
-			System.out.println(si.getName() + " 님 정보 수정 완료" + "(" + row + "번째 row) ");
+			pstmt.executeUpdate(); // 쿼리실행
+			System.out.println(si.getName() + " 님 정보 수정 완료");
 
 		} catch (
 
@@ -122,7 +133,6 @@ public class ConnectDatabase {
 				pstmt.close(); // 쿼리 실행 관련 객체 종료
 			if (conn != null)
 				conn.close(); // Mysql 연결 종료
-			System.out.println("성적관리 시스템 종료");
 		} catch (Exception e2) {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
